@@ -1,0 +1,53 @@
+Certainly! I'll guide you through the process of creating, activating, and using a virtual environment. This is a good practice as it keeps your project dependencies isolated from other Python projects.
+
+Here's how to set up and use a virtual environment:
+
+1. First, open a terminal or command prompt.
+
+2. Navigate to your project directory:
+   ```
+   cd path/to/your/project
+   ```
+
+3. Create a virtual environment (let's call it 'venv'):
+   - On Windows:
+     ```
+     python -m venv venv
+     ```
+   - On macOS and Linux:
+     ```
+     python3 -m venv venv
+     ```
+
+4. Activate the virtual environment:
+   - On Windows:
+     ```
+     venv\Scripts\activate
+     ```
+   - On macOS and Linux:
+     ```
+     source venv/bin/activate
+     ```
+
+5. You should now see (venv) at the beginning of your command prompt, indicating that the virtual environment is active.
+
+6. Now install the OpenAI package in your virtual environment:
+   ```
+   pip install openai
+   ```
+
+7. You can now run your script within this environment:
+   ```
+   python scenario_planning_chatbot.py
+   ```
+
+8. When you're done, you can deactivate the virtual environment by simply typing:
+   ```
+   deactivate
+   ```
+
+Remember to activate your virtual environment every time you want to work on this project. The virtual environment keeps your project's dependencies separate from your global Python installation and other projects.
+
+If you're using an IDE like PyCharm or VS Code, you can typically set up the virtual environment within the IDE and it will activate automatically when you open the project.
+
+Let me know if you need any clarification on these steps!
