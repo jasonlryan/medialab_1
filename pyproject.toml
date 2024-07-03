@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "flask-chatbot"
+version = "0.1.0"
+description = "AI-assisted Scenario Planning Chatbot"
+authors = ["Your Name <your.email@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^2.0.1"
+openai = "^0.27.0"
+gunicorn = "^20.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

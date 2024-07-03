@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: flask-chatbot
+    env: python
+    buildCommand: pip install poetry && poetry install
+    startCommand: poetry run gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: OPENAI_API_KEY
+        sync: false
