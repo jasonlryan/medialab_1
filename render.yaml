@@ -1,8 +1,8 @@
-cat > render.yaml << EOL
 services:
   - type: web
     name: flask-chatbot
-    env: python
+    runtime: python
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
@@ -10,4 +10,3 @@ services:
         value: 3.11.9
       - key: OPENAI_API_KEY
         sync: false
-EOL
