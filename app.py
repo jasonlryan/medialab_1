@@ -1,7 +1,13 @@
+from dotenv import load_dotenv
+import os
+import openai
+
 from flask import Flask, render_template, request, Response, stream_with_context
 from scenario_planning_chatbot import ScenarioPlanningChatbot
 import json
 import logging
+
+load_dotenv()  # This loads the variables from .env
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -36,5 +42,5 @@ def chat():
 
     return Response(stream_with_context(generate()), content_type='text/event-stream')
 
-# if __name__ == '__main__':
-#    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(port=5001, debug=True)

@@ -1,14 +1,24 @@
 print("Debug: Starting scenario_planning_chatbot.py")
 import openai
 import os
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Fetch the API key from environment variables
 api_key = os.getenv('OPENAI_API_KEY')
 
+# Debug prints to check the environment variable
+print(f"Raw API Key from os.getenv: {api_key}")
+if not api_key:
+    raise ValueError("OpenAI API key not found.")
+print("OpenAI API Key:", api_key[:5] + "..." + api_key[-5:])  # Print a truncated version of the API key for security
 
 class ScenarioPlanningChatbot:
     def __init__(self):
         self.conversation_history = []
-        openai.api_key = api_key  # Replace with your actual API key
+        openai.api_key = api_key  # Set the OpenAI API key
 
     def handle_input_stream(self, user_input):
         self.conversation_history.append({"role": "user", "content": user_input})
